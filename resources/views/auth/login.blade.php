@@ -27,7 +27,7 @@
         <div class="vertical-align-middle auth-main">
             <div class="auth-box">
                 <div class="top">
-                    <img src="../assets/images/logo-white.svg" alt="Lucid">
+                    <img src="/assets/images/logo.png" alt="Mangosoft">
                 </div>
                 <div class="card">
                     <div class="header">

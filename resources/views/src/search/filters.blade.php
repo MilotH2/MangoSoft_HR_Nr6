@@ -101,7 +101,8 @@
 
                 </div>
             </div>
-            <button class="btn btn-warning" style="width:100%;">Filter</button>
+            <hr />
+            <button class="btn btn-info" style="width:100%;">Filter</button>
         </form>
     </div>
 </div>

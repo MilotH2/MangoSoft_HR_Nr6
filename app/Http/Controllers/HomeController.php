@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Models\Skill;
+use App\Models\Status;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use MongoDB\Driver\Query;
 
@@ -16,7 +18,18 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
+    public function dashboard(){
+        $contacts = Contact::count();
+        $activeTasks = Task::where('status','>',0)->count();
+        $tasks = Task::count();
+        $statuses = Status::count();
+        $contracts = Status::where('status',6)->count();
+        $opens = Status::where('status',1)->count();
+        $declines = Status::where('status',5)->count();
+        $interviews = Status::whereIn('status',[2,3,4])->count();
+        $lastContacts = Contact::with('positions')->latest()->limit(5)->get();
+        return view('src.dashboard',compact('contacts','tasks','activeTasks','statuses','contracts','opens','declines','interviews','lastContacts'));
+    }
     public function filterSearch(){
         //$this->searchString = strtolower('Java or test');
         //$s = strtolower('Java and (test or test2)');

@@ -17,7 +17,7 @@
                 @if(auth()->check())
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="{!! url("/profile") !!}" class="icon-menu d-none d-sm-block rightbar_btn"><i class="icon-user"></i></a>
+                            <a href="{!! url("/dashboard") !!}" class="icon-menu d-none d-sm-block rightbar_btn"><i class="icon-user"></i></a>
                         </li>
                         <li>
                             <form action="{!! route("logout") !!}" method="POST">

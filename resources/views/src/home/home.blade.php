@@ -30,9 +30,6 @@
                     <div class="card">
                         <div class="body">
                             <div class="modal-body">
-                                <h3><button type="button" class="btn btn-info btn-sm" onclick="javascript:window.history.back();"><i class="fa fa-angle-left"></i></button> Basic information</h3>
-                                <img src="{{ asset('/assets/images/red_dot.png') }}" style="width: 16px" />
-                                <br/>
                                 <hr />
                                 <form action="{!! url('/contact/save') !!}" method="POST" enctype="multipart/form-data">
                                     @csrf

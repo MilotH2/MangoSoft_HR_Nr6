@@ -7,12 +7,18 @@ Route::get('/', "Controller@index");
 
 Route::get('/start','ContactController@show');
 
+Route::group(['prefix'=>'contact'], function(){
+    Route::post('/save','ContactController@__storeContact');
+    Route::get('/update/{id}','ContactController@show');
+
+});
 Route::match(['get','post'],'/search2','HomeController@filterSearch');
 Route::middleware('auth')->group(function() {
 //    Route::get('/', function () {
 //        return redirect('/contact/list');
 //        //return view('src.dashboard');
 //    });
+    Route::get("/dashboard","HomeController@dashboard");
     Route::get("/users","EmployeeController@index");
     Route::get("/makeDatabaseChanges","Controller@makeDatabaseChanges");
 
@@ -38,8 +44,8 @@ Route::middleware('auth')->group(function() {
     Route::group(['prefix'=>'contact'], function(){
         Route::get('/list','ContactController@index');
         Route::get('/add','ContactController@show');
-        Route::get('/update/{id}','ContactController@show');
-        Route::post('/save','ContactController@__storeContact');
+//        Route::get('/update/{id}','ContactController@show');
+//        Route::post('/save','ContactController@__storeContact');
         Route::get('/activities/{id}','ContactController@__activities');
         Route::get('/activities/{id}','ContactController@__activities');
         Route::post('/{id}/saveNote','NoteController@__saveNote');

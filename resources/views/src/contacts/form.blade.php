@@ -33,8 +33,8 @@
                     <div class="card">
                         <div class="body">
                             <div class="modal-body">
+                                @if(($contact->id != null || $contact->id != 0) && auth()->check())
                                 <h4><button type="button" style="border: 0" class="btn btn-outline-info" onclick="javascript:window.history.back();"><i class="fa fa-angle-left"></i></button> Basic Information</h4>
-                                @if($contact->id != null || $contact->id != 0)
 
                                     @if($contact->status == 1)
                                         <img src="{{ asset('/assets/images/green_dot.png') }}" style="width: 16px" />
@@ -43,8 +43,6 @@
                                     @else
                                         <img src="{{ asset('/assets/images/red_dot.png') }}" style="width: 16px" />
                                     @endif
-                                @endif
-                                @if($contact->id != null || $contact->id != 0)
                                     <a style="float: right;margin: 0 10px" href="#changeStatus_{{$contact->id}}" data-toggle="modal" data-target="#changeStatus_{{$contact->id}}"
                                     @if($contact->status == 1)
                                     class="btn btn-success btn-sm"

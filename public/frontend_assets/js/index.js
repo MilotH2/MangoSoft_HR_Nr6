@@ -16,7 +16,7 @@ $(function() {
         offset: 90,
         width: '147px',
         height: '147px',
-        sliceColors: ['#02b5b2', '#445771', '#ffcd55']
+        sliceColors: ['#7a8691', '#237faf', '#cc2d2a','#5ccc53']
     })
     $('#sparkline-compositeline').sparkline('html', {
         fillColor: false,
@@ -42,12 +42,12 @@ $(function() {
         chartRangeMax: 10
     });
 
-    // =================    
+    // =================
     $('.sparkbar').sparkline('html', { type: 'bar' });
 
     // notification popup
     toastr.options.closeButton = true;
-    toastr.options.positionClass = 'toast-bottom-right';    
+    toastr.options.positionClass = 'toast-bottom-right';
     toastr['success']('Hello, welcome to Lucid, a unique admin Template.');
 });
 
@@ -96,16 +96,16 @@ var dataMultiple = {
         data: [825, 380, 350, 621, 410, 450, 570, 400, 555, 225, 750, 900],
     }, {
         name: 'Marketing',
-        data: [215, 350, 25, 380, 400, 249, 480, 258, 555, 465, 700, 496],            
+        data: [215, 350, 25, 380, 400, 249, 480, 258, 555, 465, 700, 496],
     },{
         name: 'Design',
-        data: [59, 350, 360, 326, 208, 450, 258, 359, 189, 528, 700, 258],            
+        data: [59, 350, 360, 326, 208, 450, 258, 359, 189, 528, 700, 258],
     },{
         name: 'Support',
-        data: [349, 350, 360, 250, 409, 237, 357, 523, 182, 520, 125, 800],            
+        data: [349, 350, 360, 250, 409, 237, 357, 523, 182, 520, 125, 800],
     },{
         name: 'Develpment',
-        data: [149, 350, 256, 380, 400, 358, 159, 523, 147, 349, 700, 89],            
+        data: [149, 350, 256, 380, 400, 358, 159, 523, 147, 349, 700, 89],
     }]
 };
 options = {
@@ -115,7 +115,7 @@ options = {
     high: 'auto',
     series: {
         'Design': {
-            showPoint: true,                
+            showPoint: true,
         },
     },
 
@@ -124,7 +124,7 @@ options = {
             return (value / 100) + 'k';
         }
     },
-    
+
     options: {
         responsive: true,
         legend: true
